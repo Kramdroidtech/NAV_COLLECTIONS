@@ -1,0 +1,108 @@
+:root {
+  --clr-grey: #948c80;
+  --clr-maroon: #632f30;
+  --clr-red: #d01110;
+  --clr-blue: #a2d3e9;
+  --clr-white: #ffff;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+.main {
+  width: 100%;
+  height: 100vh;
+  background: var(--clr-grey);
+}
+.main .navbar-main {
+  width: 15%;
+  height: 100%;
+  background: var(--clr-maroon);
+  position: relative;
+  /* left: -180px; */
+
+  /* Layout */
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+
+  /* transition */
+  transition: left 1s linear;
+}
+.main .navbar-main .toggle-btn {
+  width: 20px;
+  height: 20px;
+  cursor: pointer;
+  position: absolute;
+  top: 50%;
+  left: 110%;
+  animation: toggleAnimation 1s infinite linear;
+
+  display: flex;
+  flex-direction: column;
+}
+.main .navbar-main .toggle-bstn:hover {
+  animation: none;
+}
+@keyframes toggleAnimation {
+  0% {
+    left: 110%;
+  }
+  50% {
+    left: 113%;
+  }
+  100% {
+    left: 110%;
+  }
+}
+.main .navbar-main .toggle-btn span {
+  width: 100%;
+  height: 3px;
+  background: white;
+  position: relative;
+}
+.main .navbar-main .toggle-btn span:first-child {
+  margin-bottom: 8px;
+  transform: rotate(-140deg);
+}
+.main .navbar-main .toggle-btn span:last-child {
+  transform: rotate(140deg);
+}
+.main .navbar-main .logo-container {
+  color: var(--clr-white);
+  margin-top: 100px;
+  padding: 10px;
+}
+.main .navbar-main .nav-links {
+  width: 100%;
+  height: 200px;
+  margin-top: 50px;
+}
+.main .navbar-main .nav-links ul {
+  widows: 100%;
+  height: 100%;
+
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+
+.main .navbar-main .nav-links ul li {
+  width: 100%;
+  padding: 20px;
+  text-align: center;
+  list-style: none;
+  cursor: pointer;
+  text-transform: uppercase;
+  color: var(--clr-white);
+  transition: all 0.1s ease;
+}
+.main .navbar-main .nav-links ul li:hover {
+  background: var(--clr-grey);
+  color: var(--clr-white);
+}
