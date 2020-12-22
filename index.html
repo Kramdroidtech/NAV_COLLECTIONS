@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>1st Template</title>
+    <title>2nd Template</title>
     <link rel="stylesheet" href="./kramdroidtech.css" />
     <link rel="stylesheet" href="./index.css" />
   </head>
@@ -30,11 +30,14 @@
       </div>
     </div>
 
-    <!-- <script>
+    <script>
       const toggleBtn = document.querySelector(".toggle-btn");
       toggleBtn.addEventListener("click", () => {
-        document.querySelector(".nav-links").classList.toggle("show");
+        const navbarMain = document.querySelector(".navbar-main");
+        navbarMain.classList.toggle("show");
+
+        toggleBtn.classList.toggle("closeBtn");
       });
-    </script> -->
+    </script>
   </body>
 </html>

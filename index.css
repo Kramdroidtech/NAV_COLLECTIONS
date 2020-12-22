@@ -20,11 +20,12 @@ body {
   background: var(--clr-grey);
 }
 .main .navbar-main {
-  width: 15%;
+  /* width: 15%; */
+  width: 200px;
   height: 100%;
   background: var(--clr-maroon);
   position: relative;
-  /* left: -180px; */
+  left: -200px;
 
   /* Layout */
   display: flex;
@@ -32,7 +33,10 @@ body {
   flex-direction: column;
 
   /* transition */
-  transition: left 1s linear;
+  transition: left 0.5s ease;
+}
+.main .navbar-main.show {
+  left: 0px;
 }
 .main .navbar-main .toggle-btn {
   width: 20px;
@@ -46,8 +50,8 @@ body {
   display: flex;
   flex-direction: column;
 }
-.main .navbar-main .toggle-bstn:hover {
-  animation: none;
+.main .navbar-main .toggle-btn:hover {
+  animation-duration: 1.5s;
 }
 @keyframes toggleAnimation {
   0% {
@@ -72,6 +76,12 @@ body {
 }
 .main .navbar-main .toggle-btn span:last-child {
   transform: rotate(140deg);
+}
+.main .navbar-main .toggle-btn.closeBtn span:first-child {
+  transform: rotate(140deg);
+}
+.main .navbar-main .toggle-btn.closeBtn span:last-child {
+  transform: rotate(-140deg);
 }
 .main .navbar-main .logo-container {
   color: var(--clr-white);
@@ -105,4 +115,25 @@ body {
 .main .navbar-main .nav-links ul li:hover {
   background: var(--clr-grey);
   color: var(--clr-white);
+}
+
+@media screen and (max-width: 600px) and (min-width: 200px) {
+  .main .navbar-main {
+    width: 50%;
+    left: -50%;
+  }
+  .main .navbar-main .toggle-btn {
+    left: 105%;
+  }
+  @keyframes toggleAnimation {
+    0% {
+      left: 105%;
+    }
+    50% {
+      left: 110%;
+    }
+    100% {
+      left: 105%;
+    }
+  }
 }
