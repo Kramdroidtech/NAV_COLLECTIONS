@@ -42,6 +42,7 @@ body {
 }
 .main .navbar-main .logo-container {
   color: white;
+  cursor: pointer;
 }
 .main .navbar-main .nav-links {
   margin-right: 20px;
