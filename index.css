@@ -1,0 +1,101 @@
+:root {
+  --clr-grey: #948c80;
+  --clr-maroon: #632f30;
+  --clr-red: #d01110;
+  --clr-blue: #a2d3e9;
+  --clr-white: #ffff;
+}
+
+::-webkit-scrollbar {
+  width: 13px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--clr-blue);
+  border-radius: 20px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--clr-maroon);
+  border-radius: 20px;
+  cursor: pointer;
+}
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+li {
+  list-style: none;
+}
+.main {
+  width: 100%;
+  height: 200vh;
+  background: var(--clr-grey);
+}
+.main .navbar-main {
+  width: 100%;
+  position: fixed;
+  bottom: 0;
+  background: var(--clr-maroon);
+}
+.main .navbar-main .nav-links {
+  width: 100%;
+}
+.main .navbar-main .nav-links ul {
+  width: 100%;
+
+  /* Layout */
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  flex-wrap: wrap;
+}
+.main .navbar-main .nav-links ul li {
+  position: relative;
+  bottom: -60px;
+  animation: linkGoUp 2s ease-in-out forwards;
+}
+.main .navbar-main .nav-links ul li:first-child {
+  animation-delay: 200ms;
+}
+.main .navbar-main .nav-links ul li:nth-child(2) {
+  animation-delay: 500ms;
+}
+.main .navbar-main .nav-links ul li:nth-child(3) {
+  animation-delay: 1s;
+}
+.main .navbar-main .nav-links ul li:last-child {
+  animation-delay: 1.5s;
+}
+@keyframes linkGoUp {
+  0% {
+    bottom: -60px;
+  }
+  100% {
+    bottom: 0px;
+  }
+}
+.main .navbar-main .nav-links ul li i {
+  padding: 20px;
+  font-size: 1.5rem;
+  color: var(--clr-blue);
+
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  cursor: pointer;
+}
+.main .navbar-main .nav-links ul li i:hover::after {
+  content: attr(data-icon);
+  position: absolute;
+  top: -10px;
+  font-size: 0.8rem;
+  padding: 5px;
+  background: var(--clr-maroon);
+  color: var(--clr-white);
+  transition: all 0.5s ease;
+}
